@@ -31,7 +31,7 @@ class MainItemList extends React.Component {
 
                 let list = [];
                 for (let j = 0; j < this.state.data[i].choose.length; j++) {
-                    list.push(<li>this.state.data[i].choose[j]</li>);
+                    list.push(<li>{this.state.data[i].choose[j]}</li>);
                 }
 
                 contentList.push(
