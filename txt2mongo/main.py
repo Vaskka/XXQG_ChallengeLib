@@ -1,5 +1,6 @@
 import re
 import pymongo
+from lxml import etree
 
 
 class Exercise:
@@ -98,5 +99,33 @@ def main():
     pass
 
 
+def debug():
+
+    s = None
+
+    with open("/Users/vaskka/Desktop/a.shtml", "r") as f:
+        s = f.read()
+
+    parse = etree.HTML(s)
+
+    p = parse.xpath("/html/body/div[4]/div[2]/div[2]/div[3]/table/tbody/tr/td/section/p")
+
+    all_text_lost = [_.xpath("string(.)") for _ in p]
+
+    main_list = [_.replace("\t", "").replace("\n", "").replace("\r", "").strip() for _ in all_text_lost]
+
+    for item in main_list.copy():
+        if not test(item):
+            main_list.remove(item)
+
+    stack = []
+
+    process(main_list, stack)
+
+    save(stack)
+    pass
+
+
 if __name__ == '__main__':
-    main()
+    #main()
+    debug()
