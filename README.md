@@ -41,7 +41,7 @@ git: [git download page](https://git-scm.com/downloads)
 
 1. clone 代码到本地，没有git可以直接download zip
 
-`git clone git@github:Vaskka/XXQG_ChallengeLib.git`
+`git clone git@github.com:Vaskka/XXQG_ChallengeLib.git`
 
 2. 打包部署
 
