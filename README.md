@@ -41,7 +41,9 @@ git: [git download page](https://git-scm.com/downloads)
 
 1. clone 代码到本地，没有git可以直接download zip
 
-`git clone git@github.com:Vaskka/XXQG_ChallengeLib.git`
+```bash 
+git clone git@github.com:Vaskka/XXQG_ChallengeLib.git
+```
 
 2. 打包部署
 
@@ -49,14 +51,25 @@ git: [git download page](https://git-scm.com/downloads)
   
 打开 **终端** / **powershell** / **cmd**： 
 
-`cd QGSearchBackend`
-`mvn clean package -DskipTests`
+```bash
+cd QGSearchBackend
+```
+
+```bash 
+mvn clean package -DskipTests
+```
 
 等待maven下载依赖并打包，如果连接apache central过慢请配置相应的maven镜像解决，这里不赘述方法。
 出现build success的字样后，在 **终端** / **powershell** / **cmd**： 
 
-`cd target`
-`java -jar *.jar`
+```bash
+cd target
+```
+
+```bash
+java -jar *.jar
+```
+
 运行刚刚打包好的jar文件。
 web服务会启动在在localhost的`4000`端口，可以在`application.properties`中进行配置。
 
